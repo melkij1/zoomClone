@@ -7,7 +7,7 @@ myVideo.mute = true;
 var peer = new Peer(undefined, {
   path: '/peerjs',
   host: '/',
-  port: '3030'
+  port: '443'
 })
 
 let myVideoStream
@@ -54,4 +54,13 @@ const addVideoStream = (video, stream) => {
   })
   videoGrid.append(video)
   //document.getElementById('video-grid')
+}
+
+
+const setUnmuteButton = () => {
+  const html = `
+    <i class="unmute fas fa-microphone-slash"></i>
+    <span>Unmute</span>
+  `
+  document.querySelector('.main__mute_button').innerHTML = html;
 }
